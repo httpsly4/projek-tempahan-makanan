@@ -1,0 +1,41 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tempahan Makanan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Kedai Nasi Lemak Kak Na</h1>
+
+  <div class="menu">
+    <h2>Menu</h2>
+    <ul>
+      <li>Nasi Lemak Ayam - RM5</li>
+      <li>Air Teh Ais - RM2</li>
+      <li>Kuih Cara - RM1</li>
+    </ul>
+  </div>
+
+  <div class="form">
+    <h2>Borang Tempahan</h2>
+    <form onsubmit="submitForm(event)">
+      <input type="text" id="nama" placeholder="Nama Anda" required>
+      <input type="text" id="order" placeholder="Contoh: 2x Nasi Lemak" required>
+      <button type="submit">Hantar Tempahan</button>
+    </form>
+    <p id="status"></p>
+  </div>
+
+  <script>
+    function submitForm(e) {
+      e.preventDefault();
+      const nama = document.getElementById("nama").value;
+      const order = document.getElementById("order").value;
+      document.getElementById("status").innerText = 
+        `Tempahan oleh ${nama} berjaya diterima!`;
+    }
+  </script>
+</body>
+</html>
